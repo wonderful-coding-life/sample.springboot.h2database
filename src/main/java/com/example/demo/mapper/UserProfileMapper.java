@@ -19,12 +19,12 @@ public interface UserProfileMapper {
 	@Select("SELECT * FROM UserProfile")
 	List<UserProfile> getUserProfileList();
 	
-	@Insert("INSERT INTO UserProfile VALUES(#{name}, #{phone}, #{address})")
+	@Insert("INSERT INTO UserProfile(name, phone, address) VALUES(#{name}, #{phone}, #{address})")
 	int insertUserProfile(@Param("name") String name, @Param("phone") String phone, @Param("address") String address);
 
 	@Update("UPDATE UserProfile SET name=#{name}, phone=#{phone}, address=#{address} WHERE id=#{id}")
 	int updateUserProfile(@Param("id") int id, @Param("name") String name, @Param("phone") String phone, @Param("address") String address);
 
 	@Delete("DELETE FROM UserProfile WHERE id=#{id}")
-	int deleteUserProfile(@Param("id") String id);
+	int deleteUserProfile(@Param("id") int id);
 }

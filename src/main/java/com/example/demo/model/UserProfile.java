@@ -6,6 +6,10 @@ public class UserProfile {
 	private String phone;
 	private String address;
 	
+	public UserProfile() {
+		
+	}
+	
 	public UserProfile(int id, String name, String phone, String address) {
 		super();
 		this.id = id;
