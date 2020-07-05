@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>사용자 목록</title>
+</head>
+<body>
+<table>
+	<tr th:each="userProfile: ${userProfileList}">
+		<td th:text="${userProfile.name}">홍길동</td>
+		<td th:text="${userProfile.phone}">010-1111-1111</td>
+		<td th:text="${userProfile.address}">서울시 강남구 대치동</td>
+		<td><a th:href="@{edit/{id}(id=${userProfile.id})}">수정</a></td>
+		<td><a th:href="@{delete/{id}(id=${userProfile.id})}">삭제</a></td>
+	</tr>
+</table>
+<a th:href="@{add}">사용자 추가</a>
+</body>
+</html>
